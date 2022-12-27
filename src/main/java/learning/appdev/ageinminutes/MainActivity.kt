@@ -20,6 +20,18 @@ class MainActivity : AppCompatActivity() {
         btnDatePicker.setOnClickListener { view ->
             clickDatePicker(view)
         }
+        
+         fun statusBarColor(){
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                window.setStatusBarColor(resources.getColor(R.color.primaryColor,this.theme))
+            }
+            else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    window.setStatusBarColor(resources.getColor(R.color.primaryColor,this.theme))
+                }
+            }
+        }
+    }
 
     }
 fun clickDatePicker(view: View){
